@@ -3,14 +3,16 @@ console.log(button)
 const main = document.getElementById("main")
 console.log(main)
 const inp = document.querySelector("input")
+let par = document.querySelector(".Done")
 console.log(inp)
-
+let counter = 0;
 // Start Event of Button
 button.addEventListener("click",
 (eo) => {
   eo.preventDefault()
   if(inp.value == 0){
     alert("Enter your hint !! ")
+    
   }
   else{
     const div = `<div class="note">
@@ -20,18 +22,25 @@ button.addEventListener("click",
         <span class="icon-bin2"></span>
         <span class="icon-angry2"></span>
     </div>`
-    main.innerHTML += div
+    main.innerHTML += div;
+    counter++
+    console.log(counter)
+
+  Counter()
+
   }
-  
-})
+})  
+
+
 // End Event of Button
 main.addEventListener("click", (eo) => {
-
   switch (eo.target.className) {
 // Start Recycle Ben Event
     case "icon-bin2":
       console.log("bin")
       eo.target.parentElement.parentElement.remove()
+    counter--
+    Counter()
       break;
 // End Recycle Ben Event
 
@@ -40,8 +49,7 @@ main.addEventListener("click", (eo) => {
       console.log("angry")
       eo.target.classList.remove("icon-angry2")
       eo.target.classList.add("icon-heart")
-      eo.target.parentElement.parentElement.getElementsByClassName("h4")[0].classList.add("angry")
-      
+      eo.target.parentElement.parentElement.getElementsByClassName("h4")[0].classList.add("angry")     
       break;
 // End Angry Event
 
@@ -51,7 +59,6 @@ case "icon-heart":
   eo.target.parentElement.parentElement.getElementsByClassName("h4")[0].classList.remove("angry")
   eo.target.classList.remove("icon-heart")
   eo.target.classList.add("icon-angry2")
-
   break;
 // End Heart Event
 
@@ -69,3 +76,10 @@ case "icon-heart":
   }
 
 })
+function Counter() {
+    if(counter !== 0){
+        par.innerHTML = ` you have ${counter} Tasks `
+    } else {
+        par.innerHTML = "No Tasks yet !"
+    }
+}
