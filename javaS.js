@@ -8,7 +8,6 @@ const notificationElement = document.getElementById("notification");
 let noteStorage = JSON.parse(localStorage.getItem('story')) || [];
 let div = '';
 
-// Load notes and set up event listeners on window load
 window.onload = () => {
     showData();
     main.addEventListener("click", handleMainClick);
@@ -45,7 +44,7 @@ function createNoteElement(noteText) {
     const noteDiv = document.createElement('div');
     noteDiv.classList.add('note');
     
-    // Star section
+    // Star 
     const starDiv = document.createElement('div');
     starDiv.classList.add('div');
     const starIcon = document.createElement('span');
@@ -60,7 +59,7 @@ function createNoteElement(noteText) {
     h4.innerText = noteText;
     textDiv.appendChild(h4);
     
-    // Icons section (bin, angry/heart, and edit)
+    // Icons 
     const iconDiv = document.createElement('div');
     iconDiv.classList.add('div');
     
@@ -75,13 +74,12 @@ function createNoteElement(noteText) {
     
     iconDiv.append(binIcon, angryIcon, editIcon);
     
-    // Append all sections to the note container
     noteDiv.append(starDiv, textDiv, iconDiv);
     
     return noteDiv;
 }
 
-// Function to handle various click events (delete, edit, toggle heart/angry, and star)
+// Function click events
 function handleMainClick(eo) {
     const target = eo.target;
     
@@ -157,7 +155,7 @@ function toggleHeartToAngry(target) {
 function editNote(target) {
     const noteElement = target.parentElement.parentElement;
     const h4 = noteElement.querySelector('.h4');
-    const oldText = h4.innerText; // Store the old text before editing
+    const oldText = h4.innerText;
 
     // Prompt the user to edit the note
     const newInput = prompt("Edit your note:", oldText);
@@ -191,7 +189,6 @@ function toggleStar(target) {
     }
 }
 
-// Load notes from local storage and display them
 function showData() {
     noteStorage = JSON.parse(localStorage.getItem('story')) || [];
     noteStorage.forEach(noteText => {
