@@ -1,0 +1,42 @@
+To-Do List Application
+- Overview.
+This is a simple To-Do List web application that allows users to create, update, and manage tasks. Tasks are saved in the browser's local storage, so they persist even after refreshing or closing the page.
+
+- Features.
+	Add a task with a hint or description.
+	Edit a task by clicking the edit icon.
+	Delete tasks using the trash icon.
+	Mark tasks as "Done" by toggling between an angry and heart icon.
+	Prioritize tasks by starring them.
+	Tasks are stored in local storage, so they persist between sessions.
+	Task counter that shows the total number of tasks.
+	Real-time notifications for actions like adding, editing, or deleting a task.
+
+- How to Run the Code ? 
+1- Open the project folder.
+2- Open the index.html file in a browser to run the application.
+
+- Usage.
+1- Add a Task:
+Enter a task description in the input field and click the "Update" button to add the task.
+The task will appear in the task list.
+
+2- Edit a Task:
+Click the pencil/edit icon next to the task you want to modify.
+A prompt will appear, allowing you to edit the task.
+Confirm the changes, and the task will be updated.
+
+3- Delete a Task:
+Click the trash/bin icon to delete a task.
+The task will be removed from the list and local storage.
+
+4- Mark Task as Done/Not Done:
+Click the angry/heart icon to mark a task as "Done" or undo it.
+The text will be struck through for completed tasks.
+
+5- Star a Task:
+Click the star icon to mark a task as important.
+Starred tasks will move to the top of the list and have a yellow star.
+
+6- Task Counter:
+At the bottom of the page, you will see a counter that displays the total number of tasks.
